@@ -1,6 +1,5 @@
 function retinaName = createRetinaName(retina)
 
-
 retina_size      = retina.retina_size;
 retinaName = ['RetSz:' int2str(retina_size)];
 

@@ -20,10 +20,6 @@ retina.retina_frame   = retina_frame;
 retina.topology_coord = topology_coord;
 retina.step_grid      = step_grid;
 
-Name  = createRetinaName(retina);
-
-retina.name = Name;
-
 
 
 
