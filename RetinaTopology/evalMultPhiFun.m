@@ -1,7 +1,7 @@
 function phi = evalMultPhiFun(datasetImg, retina)
 
 fprintf('Loading image dataset...');
-load(datasetImg);
+grayScaleImg = loadDataset(datasetImg);
 fprintf('done\n\n');
 
 
