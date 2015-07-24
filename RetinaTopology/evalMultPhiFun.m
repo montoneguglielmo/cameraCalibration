@@ -1,4 +1,4 @@
-function phi = evalMultPhiFun(datasetImg, retina)
+function [phi, photo_time_collect] = evalMultPhiFun(datasetImg, retina)
 
 fprintf('Loading image dataset...');
 grayScaleImg = loadDataset(datasetImg);
@@ -12,6 +12,8 @@ corr_threshold = retina.corr_threshold;
 
 p = ProgressBar(numel(phi));
 count = 0;
+photo_time_collect = [];
+
 for indFrame1 = 1:size(grayScaleImg{1},1)
     for indFrame2 = 1:size(grayScaleImg{1},1)
         
@@ -41,5 +43,9 @@ for indFrame1 = 1:size(grayScaleImg{1},1)
         phi{count}.nPhi = nPhi;
         
     end
+    
+    photo_time_collect = [photo_time_collect, photo_Time(1:int8(size(photo_Time,1)/2),:)];
+    
 end
 p.stop;
+

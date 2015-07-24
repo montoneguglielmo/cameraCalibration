@@ -4,14 +4,18 @@ addpath('../CreateRetina/')
 doSave = 0;
 saveDir = '.';
 
-square_retina     =  1;
+square_retina     =  0;
 retina_size       =  150;
-retina_step       =  10;
+retina_step       =  2;
 corr_threshold    =  0.9;
-ray               =  50;
+ray               =  110;
 
-%datasetImg   = '../LoadImages/grayScaleImgFish*';
-datasetImg   = '../LoadImages/FishEyeData3Color*';
+
+datasetImg   = '../LoadImages/grayScaleImgFish*';
+%datasetImg   = '../LoadImages/FishEyeData3Color*';
+
+%fake images dataset
+%datasetImg   = '../LoadImages/grayScaleImgMoreMov.mat';
 
 if(square_retina == 1)
     retina = defineFictionRetinaSquare(retina_size, retina_step);     
@@ -24,25 +28,19 @@ else
 end
 
 retina.name = Name;
+retina.saveDir = saveDir;
    
 %Evaluating the function phi and their norm
 retina.corr_threshold = corr_threshold;
-phi = evalMultPhiFun(datasetImg,retina);
+[phi, photo_time_collect] = evalMultPhiFun(datasetImg,retina);
 
 %For each couple of photoreceptors find the phi-funcition that better
 %associate them
 [vectPhi, vectPhiCoor] = buildPhiVect(phi);
 D = metEval(retina, vectPhi, vectPhiCoor, phi);
 
-
-manif_dim = 2;
-tp_estim = mdscale(D, manif_dim);
-
-retina.tp_estim = tp_estim;
+retina.photo_time_collect = photo_time_collect;
 retina.DMat     = D;
-
-figure
-scatter(tp_estim(:,1),tp_estim(:,2));
 
 retina.dataset = datasetImg;
 
