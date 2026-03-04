@@ -132,7 +132,7 @@ The function converts the raw images into the `.mat` format expected by `estimMe
   title     = {Unsupervised model-free camera calibration algorithm for robotic applications},
   author    = {Montone, Guglielmo and O'Regan, J. Kevin and Terekhov, Alexander V.},
   booktitle = {IEEE/RSJ International Conference on Intelligent Robots and Systems (IROS)},
-  year      = {<YEAR>}
+  year      = {2015}
 }
 ```
 
