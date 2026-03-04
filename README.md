@@ -4,7 +4,7 @@ MATLAB implementation of the displacement-based camera calibration algorithm fro
 
 > **Unsupervised model-free camera calibration algorithm for robotic applications**
 > Guglielmo Montone, J. Kevin O'Regan, Alexander V. Terekhov
-> *IROS \<YEAR\>*
+> *IROS 2015*
 
 ## Overview
 
