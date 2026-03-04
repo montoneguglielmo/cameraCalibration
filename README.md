@@ -36,7 +36,7 @@ The estimated photoreceptor layout is used to remap distorted (e.g., fish-eye) i
 
 Fish-eye images before and after calibration (photoreceptor grid size 70, no displacement error):
 
-![Undistortion results](images/fig4.png)
+![Undistortion results](fig4.png)
 
 *Left column: original scene. Center: raw fish-eye image. Bottom-left: undistorted with displacement-based method. Bottom-right: undistorted with correlation-based method.*
 
